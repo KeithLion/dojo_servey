@@ -11,7 +11,7 @@ def survey():
 
 @app.route('/pass_result', methods=['post'])
 def pass_result():
-    if not Survey.survey(request.form):
+    if not Survey.validate_form(request.form):
         return redirect('/')
 
     session['name'] = request.form['name']
